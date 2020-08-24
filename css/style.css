@@ -1461,6 +1461,7 @@
 .header {
   width: 100%;
   min-height: 100vh;
+  padding: 40px 0px 0px 0px;
   background: url(../img/header/background.jpg) center/cover no-repeat;
   -webkit-transition: ease-in-out .3s;
   transition: ease-in-out .3s;
@@ -1485,6 +1486,10 @@
   }
 }
 
+.header__wrapper-row {
+  width: 100%;
+}
+
 .header__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1495,7 +1500,6 @@
           flex-direction: column;
   min-height: inherit;
   margin: 0 auto;
-  padding: 40px 0 0 0;
 }
 
 .header__row {
@@ -1511,9 +1515,11 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  max-width: 1230px;
   width: 100%;
   height: 40px;
   padding: 0 20px;
+  margin: 0 auto;
 }
 
 .header__logo {
@@ -1536,7 +1542,6 @@
 .header__link {
   position: relative;
   padding: 0 14px;
-  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -1544,6 +1549,11 @@
   letter-spacing: 0.35px;
   list-style-type: none;
   cursor: pointer;
+}
+
+.header__link a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 @media (max-width: 976px) {
@@ -1669,10 +1679,8 @@
     width: 100%;
     border-radius: 10px;
     background-color: #fff;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     -webkit-transition: ease-in-out .3s;
     transition: ease-in-out .3s;
   }
@@ -1697,15 +1705,14 @@
   .header__burger:after {
     -webkit-transition: ease-in-out 0.3s;
     transition: ease-in-out 0.3s;
-    top: 100%;
+    bottom: 0;
   }
 }
 
 .header__burger_active {
   position: fixed;
-	right: 20px;
-	z-index: 100;
-  
+  right: 20px;
+  z-index: 100;
   height: 40px;
 }
 
@@ -1760,11 +1767,25 @@
   letter-spacing: 0.35px;
 }
 
+.header__item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  background-color: #c0301c;
+  -webkit-box-shadow: 0px 15px 20px 0px rgba(34, 60, 80, 0.5);
+          box-shadow: 0px 15px 20px 0px rgba(34, 60, 80, 0.5);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: ease-in-out .3s;
-  transition: ease-in-out .3s;
+  -webkit-transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0s;
 }
 
 .wrapper {
