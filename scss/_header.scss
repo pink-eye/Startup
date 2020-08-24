@@ -6,6 +6,12 @@
 	background: url(../img/header/background.jpg) center / cover no-repeat;
 
 	transition: ease-in-out .3s;
+	
+	@media (max-height: 430px) {
+		.header__content {
+			justify-content: flex-start;
+		}
+	}
 
 	@media (max-height: 355px) {
 		.header__wrapper {
