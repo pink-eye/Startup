@@ -37,11 +37,9 @@ $(document).ready(function () {
 	// SLIDER
 
 	$('.slider').slick({
-		autoplay: true,
 		draggable: false,
 		infinite: true,
 		slidesToShow: 4,
-		autoplaySpeed: 4000,
 		responsive: [
 			{
 				breakpoint: 1200,
@@ -65,8 +63,6 @@ $(document).ready(function () {
 	});
 
 	$('.clients__slider').slick({
-		autoplay: true,
-		autoplaySpeed: 4000,
 		draggable: false,
 		dots: true,
 		arrows: false
@@ -125,16 +121,56 @@ $(document).ready(function () {
 
 
 	// FIX HEADER ROW
-
 	const headerWrapperRow = $('.header__wrapper-row');
 	const headerRowOffset = $('.header__row').offset().top;
 	
 	$(window).scroll(function() {
 		const scrolled = $(this).scrollTop();
 		
-		if(scrolled > headerRowOffset) 
-		headerWrapperRow.addClass('fixed');
-		else if (scrolled < headerRowOffset)
-		headerWrapperRow.removeClass('fixed');
+		if(scrolled > headerRowOffset) {
+			headerWrapperRow.addClass('fixed');
+		}
+		else if (scrolled < headerRowOffset){
+			headerWrapperRow.removeClass('fixed');
+		}
 	}) 
+
+	// POPUP
+
+	const openPPs = document.querySelectorAll('.pp');
+	const popup = document.querySelector('.popup');
+	const popupBody = document.querySelectorAll('.popup__body');
+	const body = document.querySelector('body');
+	const closePP = document.querySelector('.close-popup');
+
+	for (let index = 0; index < openPPs.length; index++) {
+		
+		const openPP = openPPs[index];
+
+		openPP.addEventListener('click', function() {
+			if(burger.classList.contains("header__burger_active") && menu.classList.contains("header__menu_active"))
+			{
+				burger.classList.toggle("header__burger_active");
+				menu.classList.toggle("header__menu_active");
+			}
+
+			popup.classList.add('_active');
+			body.style.overflow = 'hidden';
+		});
+	}
+
+	closePP.addEventListener('click', function() {
+		popup.classList.remove('_active');
+		body.style.overflow = 'visible';
+	});
+	
+	popup.addEventListener('click', function(e) {
+		if(popup.classList.contains('_active') &&  e.target == popup) 
+		{
+			popup.classList.remove('_active');
+			body.style.overflow = 'visible';
+		}
+	});
+
+
 });

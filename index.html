@@ -13,6 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:regular,italic,500,600,700" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:regular,700" rel="stylesheet" />
 
+
 	<!-- Favicon -->
 	<link rel='apple-touch-icon' sizes='180x180' href='favicon/apple-touch-icon.png'>
 	<link rel='icon' type='image/png' sizes='32x32' href='favicon/favicon-32x32.png'>
@@ -26,6 +27,19 @@
 </head>
 
 <body>
+
+
+	<div class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<div class="popup__title">Привет, друг!</div>
+				<div class="popup__text">Эта кнопка никуда не ведет, потому что в макете сайта, взятый из свободного
+					доступа в интернете, не предусомотрены переходы по ссылке на другие страницы</div>
+			</div>
+			<button class="popup__close close-popup"></button>
+		</div>
+	</div>
+
 	<header id="home" class="header">
 		<div class="header__wrapper-row">
 			<div class="header__row">
@@ -57,7 +71,7 @@
 					<h1 class="header__title">welcome to startup</h1>
 					<p class="header__subtitle">Your Favourite Creative Agency Template</p>
 				</div>
-				<button class="header__button button">get started</button>
+				<button class="header__button button pp">get started</button>
 			</div>
 		</div>
 	</header>
@@ -139,7 +153,7 @@
 					amet. Lorem ipsum eat.</div>
 			</div>
 			<div class="slider">
-				<div class="slider__item">
+				<div class="slider__item pp">
 					<div class="slider__picture">
 						<img src="img/about/picture.jpg" loading="lazy" alt="picture">
 						<ul class="slider__social">
@@ -152,7 +166,7 @@
 					<div class="slider__name">Md. Khalil Uddin</div>
 					<div class="slider__job">Head of Ideas</div>
 				</div>
-				<div class="slider__item">
+				<div class="slider__item pp ">
 					<div class="slider__picture">
 						<img src="img/about/picture2.jpg" loading="lazy" alt="picture2">
 						<ul class="slider__social">
@@ -165,7 +179,7 @@
 					<div class="slider__name">Rubel Miah</div>
 					<div class="slider__job">Lead WordPress Developer</div>
 				</div>
-				<div class="slider__item">
+				<div class="slider__item pp">
 					<div class="slider__picture">
 						<img src="img/about/picture3.jpg" loading="lazy" alt="picture3">
 						<ul class="slider__social">
@@ -178,7 +192,7 @@
 					<div class="slider__name">Shamim Mia</div>
 					<div class="slider__job">Sr. Web Developer</div>
 				</div>
-				<div class="slider__item">
+				<div class="slider__item pp">
 					<div class="slider__picture">
 						<img src="img/about/picture4.jpg" loading="lazy" alt="picture4">
 						<ul class="slider__social">
@@ -191,7 +205,7 @@
 					<div class="slider__name">John Doe</div>
 					<div class="slider__job">Front-end Developer</div>
 				</div>
-				<div class="slider__item">
+				<div class="slider__item pp">
 					<div class="slider__picture">
 						<img src="img/about/picture.jpg" loading="lazy" alt="picture">
 						<ul class="slider__social">
@@ -390,11 +404,11 @@
 	</section>
 
 
-	<section class="your-project padding">
+	<section class="your-project padding ">
 		<div class="your-project__wrapper wrapper">
 			<div class="your-project__title">Do you like OUR WORK so far?<br>
 				Let's talk about YOUR PROJECT!</div>
-			<div class="your-project__button button">Get in Touch</div>
+			<button class="your-project__button button pp">Get in Touch</button>
 		</div>
 	</section>
 
@@ -406,7 +420,7 @@
 				<p class="blog__text text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
 			</div>
 			<div class="blog__posts">
-				<div class="blog__item">
+				<div class="blog__item pp">
 					<div class="blog__image bgi"><img src="img/blog/blog__image1.jpg" loading="lazy" alt="blog"></div>
 					<div class="blog__body">
 						<div class="blog__row">
@@ -427,7 +441,7 @@
 						<div class="blog__link">Read more</div>
 					</div>
 				</div>
-				<div class="blog__item">
+				<div class="blog__item pp">
 					<div class="blog__image bgi"><img src="img/blog/blog__image2.jpg" loading="lazy" alt="blog"></div>
 					<div class="blog__body">
 						<div class="blog__row">
@@ -456,11 +470,16 @@
 	<section id="clients" class="clients padding">
 		<div class="clients__wrapper wrapper">
 			<div class="clients__row">
-				<div class="clients__logo"><img src="img/clients/clients__logo1.png" loading="lazy" alt="logo"></div>
-				<div class="clients__logo"><img src="img/clients/clients__logo2.png" loading="lazy" alt="logo"></div>
-				<div class="clients__logo"><img src="img/clients/clients__logo3.png" loading="lazy" alt="logo"></div>
-				<div class="clients__logo"><img src="img/clients/clients__logo4.png" loading="lazy" alt="logo"></div>
-				<div class="clients__logo"><img src="img/clients/clients__logo5.png" loading="lazy" alt="logo"></div>
+				<div class="clients__logo pp"><img src="img/clients/clients__logo2.png" loading="lazy" alt="logo">
+				</div>
+				<div class="clients__logo pp"><img src="img/clients/clients__logo1.png" loading="lazy" alt="logo">
+				</div>
+				<div class="clients__logo pp"><img src="img/clients/clients__logo3.png" loading="lazy" alt="logo">
+				</div>
+				<div class="clients__logo pp"><img src="img/clients/clients__logo4.png" loading="lazy" alt="logo">
+				</div>
+				<div class="clients__logo pp"><img src="img/clients/clients__logo5.png" loading="lazy" alt="logo">
+				</div>
 			</div>
 			<div class="clients__slider">
 				<div class="clients__item">
@@ -547,20 +566,23 @@
 		<div class="footer__wrapper wrapper">
 			<div class="footer__column">
 				<ul class="footer__links">
-					<li class="footer__item"><img src="img/footer/facebook.svg" alt="facebook"></li>
-					<li class="footer__item"><img src="img/footer/twitter.svg" alt="twitter"></li>
-					<li class="footer__item"><img src="img/footer/dribbble.svg" alt="dribbble"></li>
-					<li class="footer__item"><img src="img/footer/gplus.svg" alt="gplus"></li>
+					<li class="footer__item pp"><img src="img/footer/facebook.svg" alt="facebook"></li>
+					<li class="footer__item pp"><img src="img/footer/twitter.svg" alt="twitter"></li>
+					<li class="footer__item pp"><img src="img/footer/dribbble.svg" alt="dribbble"></li>
+					<li class="footer__item pp"><img src="img/footer/gplus.svg" alt="gplus"></li>
 				</ul>
 				<p class="footer__rights">© 2015 Startup, Designed by ShapedTheme</p>
 			</div>
 		</div>
 	</footer>
 
+
+
 	<!-- Optional JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src='scripts/script.js'></script>
 	<script src="scripts/slick.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
