@@ -19,6 +19,7 @@
 	max-width: 1230px;
 	width: 100%;
 	min-height: inherit;
+	transition: 0s;
 }
 
 .button {
@@ -96,3 +97,8 @@
 	visibility: hidden;
 	display: none;
 }
+
+.page-wrapper {
+	min-height: 100vh;
+	transition: 0s;
+}	

@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	let burger = document.getElementById("burger");
 	let menu = document.getElementById("menu");
-	
+
 	burger.onclick = function () {
 		burger.classList.toggle("header__burger_active");
 		menu.classList.toggle("header__menu_active");
@@ -13,7 +13,7 @@ $(document).ready(function () {
 	headerItems = document.querySelectorAll('.header__item a');
 
 	for (let index = 0; index < headerItems.length; index++) {
-		
+
 		headerItem = headerItems[index];
 
 		headerItem.addEventListener('click', function () {
@@ -121,19 +121,20 @@ $(document).ready(function () {
 
 
 	// FIX HEADER ROW
-	const headerWrapperRow = $('.header__wrapper-row');
+
+	const headerWrapper1Row = $('.header__wrapper1-row');
 	const headerRowOffset = $('.header__row').offset().top;
-	
-	$(window).scroll(function() {
+
+	$(window).scroll(function () {
 		const scrolled = $(this).scrollTop();
-		
-		if(scrolled > headerRowOffset) {
-			headerWrapperRow.addClass('fixed');
+
+		if (scrolled > headerRowOffset) {
+			headerWrapper1Row.addClass('fixed');
 		}
-		else if (scrolled < headerRowOffset){
-			headerWrapperRow.removeClass('fixed');
+		else if (scrolled <= headerRowOffset) {
+			headerWrapper1Row.removeClass('fixed');
 		}
-	}) 
+	})
 
 	// POPUP
 
@@ -142,33 +143,42 @@ $(document).ready(function () {
 	const popupBody = document.querySelectorAll('.popup__body');
 	const body = document.querySelector('body');
 	const closePP = document.querySelector('.close-popup');
+	let paddingToFixBody = (window.innerWidth - document.querySelector('.page-wrapper').offsetWidth) + 'px';
+	const headerWrapper2Row = document.querySelector('.header__wrapper2-row');
+	const headerWrapperRow = document.querySelector('.header__wrapper1-row');
 
 	for (let index = 0; index < openPPs.length; index++) {
-		
+
 		const openPP = openPPs[index];
 
-		openPP.addEventListener('click', function() {
-			if(burger.classList.contains("header__burger_active") && menu.classList.contains("header__menu_active"))
-			{
+		openPP.addEventListener('click', function () {
+			if (burger.classList.contains("header__burger_active") && menu.classList.contains("header__menu_active")) {
 				burger.classList.toggle("header__burger_active");
 				menu.classList.toggle("header__menu_active");
 			}
 
 			popup.classList.add('_active');
 			body.style.overflow = 'hidden';
+			document.querySelector('.page-wrapper').style.paddingRight = paddingToFixBody;
+			
+			if (headerWrapperRow.classList.contains("fixed"))
+				headerWrapper2Row.style.paddingRight = paddingToFixBody;
 		});
 	}
 
-	closePP.addEventListener('click', function() {
+	closePP.addEventListener('click', function () {
 		popup.classList.remove('_active');
 		body.style.overflow = 'visible';
+		document.querySelector('.page-wrapper').style.paddingRight = '0px';
+		headerWrapper2Row.style.paddingRight = '0px';
 	});
-	
-	popup.addEventListener('click', function(e) {
-		if(popup.classList.contains('_active') &&  e.target == popup) 
-		{
+
+	popup.addEventListener('click', function (e) {
+		if (popup.classList.contains('_active') && e.target == popup) {
 			popup.classList.remove('_active');
 			body.style.overflow = 'visible';
+			document.querySelector('.page-wrapper').style.paddingRight = '0px';
+			headerWrapper2Row.style.paddingRight = '0px';
 		}
 	});
 
